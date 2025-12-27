@@ -1014,7 +1014,6 @@ require('lazy').setup({
   -- require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-  require 'kickstart.plugins.lazygit',
   require 'kickstart.plugins.vim-fugitive',
   require 'kickstart.plugins.vim-rhubarb',
   require 'kickstart.plugins.toggleterm',
