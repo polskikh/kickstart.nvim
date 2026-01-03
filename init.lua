@@ -93,6 +93,16 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
+-- Set python path to fix slow runtime/autoload/provider/python3.vim
+-- Here's how to detect the problem:
+-- :profile start /tmp/nvim-profile.log
+-- :profile func *
+-- :profile file *
+-- :e slow_file.py
+-- :profile stop
+-- less /tmp/nvim-profile.log
+vim.g.python3_host_prog = vim.fn.expand '~/.pyenv/shims/python3'
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
