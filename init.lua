@@ -647,6 +647,18 @@ require('lazy').setup({
             })
           end
 
+          -- Add border to K hover
+          vim.lsp.util.open_floating_preview = (function(orig)
+            return function(contents, syntax, opts, ...)
+              opts = opts or {}
+              opts.border = opts.border or 'rounded'
+              opts.max_width = opts.max_width or 80
+              opts.max_height = opts.max_height or 25
+              opts.focusable = true
+              return orig(contents, syntax, opts, ...)
+            end
+          end)(vim.lsp.util.open_floating_preview)
+
           -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
           --
